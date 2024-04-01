@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <table
+      align="center"
+      border="0"
+      cellpadding="0"
+      cellspacing="0"
+      width="629px"
+      background-color="#ffffff"
+    >
+      <tbody>
+        <tr align="right">
+          <td>
+            <a href="#">
+              <img
+                src="https://www.rentickle.com/media/wysiwyg/salesmail/header.jpg"
+                style="object-fit: contain"
+                alt="Rentickle Logo"
+              />
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td
+            style="
+              font-family: Poppins;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 16px;
+              margin-left: 20px !important;
+              display: inline-block;
+              line-height: 22px;
+              color: #515759;
+            "
+            class="hello-span"
+          >
+            <div>
+              Hello
+              <span
+                style="
+                  color: #515759;
+                  font-weight: 600;
+                  text-transform: uppercase !important;
+                "
+              >
+                {{var order.getBillingAddress().getFirstname().format('html')}} </span
+              >, Welcome to Rentickle! We're happy to have you here :)
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td
+            style="
+              width: 501px;
+              margin-left: 20px !important;
+              font-family: Poppins;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 22px;
+              color: #515759;
+              display: inline-block;
+            "
+          >
+            <div style="margin-top: 26px !important">
+              Kindly
+              <span style="color: #515759; font-weight: 600"
+                >upload your Documents</span
+              >
+              by clicking on the link provided below.
+            </div>
+          </td>
+        </tr>
+
+        <tr align="center">
+          <td>
+            <div style="margin-top: 22px !important">
+              <a href="#">
+                <img
+                  src="https://www.rentickle.com/media/wysiwyg/salesmail/iconsss.png"
+                  style="object-fit: contain"
+                  alt="Rentickle Logo"
+                />
+              </a>
+            </div>
+          </td>
+        </tr>
+
+        <tr
+          style="
+            display: inline-block;
+            margin-top: 35px !important;
+            width: 100%;
+          "
+          align="center"
+        >
+          <td>
+            <div
+              class="upload-button-container"
+              style="
+                color: white;
+                border: none;
+                text-decoration: none;
+                cursor: pointer;
+                width: 139px;
+                height: 44px;
+                background: #ff1a3d;
+                border-radius: 4px;
+              "
+            >
+              <a
+                href="https://www.rentickle.com/customer/account"
+                class="upload-button-a"
+                >Upload</a
+              >
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="display: inline-block">
+            <div style="display: flex; margin-top: 40px; margin-bottom: 30px">
+              <div
+                style="
+                  width: 0;
+                  height: 0;
+                  border-top: 12px solid transparent;
+                  border-bottom: 12px solid transparent;
+                  border-left: 12px solid #ff1a3d;
+                  margin-left: 21px;
+                  margin-right: 10px;
+                  margin-top: 10px;
+                "
+              ></div>
+              <div
+                style="
+                  font-family: Poppins;
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 32px;
+                  line-height: 42px;
+                  text-align: center;
+                  color: #33050c;
+                "
+              >
+                Your Order Summary is below
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td
+            style="
+              height: 40px;
+              font-family: Poppins;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 16px;
+              line-height: 19px;
+              color: #ff1a3d;
+              margin-left: 20px !important;
+              display: inline-block;
+            "
+          >
+            Your order #{{var order.increment_id}}
+          </td>
+        </tr>
+
+        <tr>
+          <td
+            style="
+              height: 40px;
+              font-family: Poppins;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 19px;
+              color: #000000;
+              margin-left: 20px !important;
+              display: inline-block;
+            "
+          >
+            Placed on {{var order.getCreatedAtFormated('long')}}
+          </td>
+        </tr>
+
+        <tr
+          style="
+            display: inline-block;
+            border-top: 1px solid #000000;
+            text-align: center;
+          "
+        >
+          <td align="center">
+            <table
+              style="width: 100% !important; text-align: center"
+              class="custom-table"
+            >
+              <tr class="order-information">
+                <td>
+                  {{if order.getEmailCustomerNote()}}
+                  <table class="message-container">
+                    <tr>
+                      <td>{{var order.getEmailCustomerNote()}}</td>
+                    </tr>
+                  </table>
+                  {{/if}} {{layout handle="sales_email_order_items"
+                  order=$order}}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr
+          style="
+            display: inline-block;
+            text-align: center;
+            border-top: none !important;
+          "
+        >
+          <td align="center">
+            <table
+              cellpadding="0"
+              cellspacing="0"
+              border="0"
+              style="
+                width: 629px;
+                margin-top: 8px;
+                width: 100% !important;
+                text-align: center;
+                border-collapse: collapse;
+              "
+            >
+              <tr>
+                <td style="width: 364px; text-align: left">
+                  <h6
+                    style="
+                      font-family: Poppins;
+                      font-style: normal;
+                      font-weight: bold;
+                      font-size: 13px;
+                      line-height: 19px;
+                      display: flex;
+                      color: #0f1419;
+                      padding: 0px 20px;
+                      height: 30px;
+                      background: #f5f5f5;
+                      margin-bottom: 0px;
+                      margin-top: 0px;
+                      border-bottom: 1px solid #000;
+                      padding-top: 10px;
+                    "
+                  >
+                    BILLING ADDRESS:
+                  </h6>
+                  <p>
+                    <span
+                      style="
+                        font-family: Poppins;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 13px;
+                        line-height: 19px;
+                        display: flex;
+                        align-items: flex-start;
+                        color: #333333;
+                        padding: 0px 20px;
+                        height: 200px;
+                      "
+                      >{{var order.getBillingAddress().format('html')}}</span
+                    >
+                  </p>
+                </td>
+                {{depend order.getIsNotVirtual()}}
+                <td style="width: 364px; text-align: left">
+                  <h6
+                    style="
+                      font-family: Poppins;
+                      font-style: normal;
+                      font-weight: bold;
+                      font-size: 13px;
+                      line-height: 19px;
+                      display: flex;
+                      color: #0f1419;
+                      padding: 0px 20px;
+                      height: 30px;
+                      background: #f5f5f5;
+                      margin-bottom: 0px;
+                      margin-top: 0px;
+                      border-bottom: 1px solid #000;
+                      padding-top: 10px;
+                    "
+                  >
+                    SHIPPING ADDRESS:
+                  </h6>
+                  <p>
+                    <span
+                      style="
+                        font-family: Poppins;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 13px;
+                        line-height: 19px;
+                        display: flex;
+                        align-items: flex-start;
+                        color: #333333;
+                        padding: 0px 20px;
+                        height: 200px;
+                      "
+                    >
+                      {{var order.getShippingAddress().format('html')}}
+                    </span>
+                  </p>
+                </td>
+                {{/depend}}
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class="table-3">
+              <table cellpadding="0" cellspacing="0" border="0" class="table">
+                <tr>
+                  {{depend order.getIsNotVirtual()}}
+                  <td style="width: 364px">
+                    <h6
+                      style="
+                        font-family: Poppins;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 13px;
+                        line-height: 19px;
+                        display: flex;
+                        color: #0f1419;
+                        padding: 0px 20px;
+                        height: 30px;
+                        background: #f5f5f5;
+                        margin-bottom: 0px;
+                        margin-top: 0px;
+                        border-bottom: 1px solid #000;
+                        padding-top: 10px;
+                      "
+                    >
+                      SHIPPING METHOD:
+                    </h6>
+                    <p style="margin-left: 20px">
+                      {{var order.shipping_description}}
+                    </p>
+                  </td>
+                  {{/depend}}
+                  <td style="width: 364px" class="pay-meth">
+                    <h6
+                      style="
+                        font-family: Poppins;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 13px;
+                        line-height: 19px;
+                        display: flex;
+                        color: #0f1419;
+                        padding: 0px 20px;
+                        height: 30px;
+                        background: #f5f5f5;
+                        margin-bottom: 0px;
+                        margin-top: 0px;
+                        border-bottom: 1px solid #000;
+                        padding-top: 10px;
+                      "
+                      class="payment-paragraph"
+                    >
+                      PAYMENT METHOD:
+                    </h6>
+                    {{var payment_html}}
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <a href="#">
+              <img
+                src="https://www.rentickle.com/media/wysiwyg/salesmail/footer.jpg"
+                style="object-fit: contain; margin-top: 39px"
+                alt="Rentickle Logo"
+              />
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

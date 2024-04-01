@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Poppins:wght@100;200;300;400;700&display=swap");
+
+.pay-meth p {
+  margin-left: 20px !important;
+}
+
+.custom-table td table:nth-child(2) td {
+  width: 80% !important;
+}
+
+.custom-table table:nth-child(2) tr:last-child {
+  color: #FF1A3D !important;
+  font-weight: 600 !important;
+}
+
+.custom-table:first-of-type thead tr:first-of-type th {
+  background: #F5F5F5 !important;
+  font-family: Poppins !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+  line-height: 19px !important;
+}
+
+.custom-table tbody tr td {
+  font-family: Poppins !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 13px !important;
+  line-height: 19px !important;
+  color: #333333 !important;
+  border-bottom: 1px solid #cccccc !important;
+}
+
+.upload-button-a {
+  /* margin-left: 45px; */
+  margin-top: 10px;
+  text-decoration: none;
+  width: 80px;
+  height: 24px;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  display: inline-block;
+  font-family: Poppins !important;
+}
+
+table.message-container>thead>tr>th {
+  background: #f5f5f5 !important;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.message-container>thead>tr>th {
+  background: #f5f5f5 !important;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+table.message-container tbody tr {
+  background: #fff !important;
+}
+
+table.message-container tbody tr td {
+  border-bottom: 1px solid #E0E0E0 !important;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.payment-paragraph>p>strong {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 19px;
+  color: #333333;
+}
+
+
+@media only screen and (max-width: 480px) {
+
+  /* .upload-button-a {
+    font-size: 12px;
+    width: 70px;
+  }
+
+  .upload-button-container {
+    width: 139px !important;
+  } */
+
+  .hello-span {
+    font-size: 12px;
+    height: 50px;
+    color: red;
+  }
+
+  .docs-mobile {
+    font-size: 12px;
+    width: 100px;
+  }
+
+}
